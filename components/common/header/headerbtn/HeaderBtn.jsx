@@ -1,19 +1,19 @@
 import React from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
 
-import styles from "./profilebtn.style";
+import styles from "./headerbtn.style";
 
-const ProfileBtn = ({ iconUrl }) => {
+const HeaderBtn = ({ iconUrl, dimension }) => {
     return(
-        <TouchableOpacity style={ styles.profileContainer } >
+        <TouchableOpacity style={ styles.btnContainer } >
             <Image 
                 source={ iconUrl }
                 resizeMode="cover"
-                style={ styles.profileImg }
+                style={ styles.btnImage(dimension) }
             />
         </TouchableOpacity>
     );
     
 };
 
-export default ProfileBtn;
+export default HeaderBtn;

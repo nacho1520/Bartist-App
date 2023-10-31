@@ -1,8 +1,8 @@
 import { View, ScrollView, SafeAreaView, Text } from "react-native";
 import { Stack } from "expo-router";
 
-import { images, COLORS } from '../constants';
-import { ProfileBtn, HorizontalList } from "../components";
+import { images, COLORS, icons } from '../constants';
+import { HeaderBtn, HorizontalList, MenuBar, Welcome } from "../components";
 
 const bares = [
     {
@@ -44,21 +44,25 @@ const Home = () => {
                 options={{
                     headerStyle: { backgroundColor: COLORS.backgroundColor },
                     headerShadowVisible: false,
-                    headerTitle: "BARTIST",
-                    headerTitleStyle: { color: COLORS.whiteColor, fontSize: 32  },
-                    headerTitleAlign: "center",
+                    headerTitle: "",
                     headerLeft: () => (
-                        <ProfileBtn iconUrl={ images.profile }/>
+                        <HeaderBtn iconUrl={ icons.menu } dimension="60%"/>
                     ),
+                    headerRight: () => (
+                        <HeaderBtn iconUrl={ images.profile } dimension="100%"/>
+                    )
                 }}
             />
             <ScrollView showsVerticalScrollIndicator={ false }>
                 <View style={{ flex: 1, padding: 16 }}>
+                    <Welcome />
                     <HorizontalList title={ "Tus próximos shows" } data={ bares } />
                     <HorizontalList title={ "Bares cercanos" } data={ bares } />
                     <HorizontalList title={ "Shows disponibles" } data={ bares } />
+                    <HorizontalList title={ "Shows disponibles" } data={ bares } />
                 </View>
             </ScrollView>
+            <MenuBar />
         </SafeAreaView>
     )
 };
