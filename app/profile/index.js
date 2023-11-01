@@ -1,12 +1,13 @@
 import React from "react";
 import { View, ScrollView, SafeAreaView } from "react-native";
-import { Stack, router } from "expo-router";
+import { Stack, useRouter } from "expo-router";
 import LinearGradient from "react-native-linear-gradient"; 
 
 import { images, COLORS, icons } from "../../constants";
 import { HeaderBtn, MenuBar, ProfileInfo } from "../../components";
 
 const Profile = () => {
+    const router = useRouter();
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.backgroundColor }}>
             <Stack.Screen 
@@ -27,7 +28,11 @@ const Profile = () => {
             <ScrollView showsVerticalScrollIndicator={ false }>
                 <ProfileInfo />
             </ScrollView>
-            <MenuBar />
+            <MenuBar 
+                homeNavigation={ () => router.push('/home') }
+                searchNavigation={() => {}}
+                globeNavigation={ () => {} }
+            />
         </SafeAreaView>
     );
 };

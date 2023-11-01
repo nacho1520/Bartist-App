@@ -1,5 +1,5 @@
 import { View, ScrollView, SafeAreaView } from "react-native";
-import { Stack, router, useRouter } from "expo-router";
+import { Stack, useRouter } from "expo-router";
 
 import { images, COLORS, icons } from '../constants';
 import { HeaderBtn, HorizontalList, MenuBar, Welcome } from "../components";
@@ -73,7 +73,11 @@ const Home = () => {
                     <HorizontalList title={ "Shows disponibles" } data={ bares } />
                 </View>
             </ScrollView>
-            <MenuBar />
+            <MenuBar 
+                homeNavigation={ () => router.push('/home') }
+                searchNavigation={() => {}}
+                globeNavigation={ () => {} }
+            />
         </SafeAreaView>
     )
 };
