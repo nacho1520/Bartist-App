@@ -1,5 +1,5 @@
-import { View, ScrollView, SafeAreaView, Text } from "react-native";
-import { Stack } from "expo-router";
+import { View, ScrollView, SafeAreaView } from "react-native";
+import { Stack, router, useRouter } from "expo-router";
 
 import { images, COLORS, icons } from '../constants';
 import { HeaderBtn, HorizontalList, MenuBar, Welcome } from "../components";
@@ -38,6 +38,13 @@ const bares = [
 ];
 
 const Home = () => {
+    const router = useRouter();
+
+    const handleProfilePress = () => {
+        router.push('/profile');
+    };
+
+
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.backgroundColor }}>
             <Stack.Screen 
@@ -49,7 +56,11 @@ const Home = () => {
                         <HeaderBtn iconUrl={ icons.menu } dimension="60%"/>
                     ),
                     headerRight: () => (
-                        <HeaderBtn iconUrl={ images.profile } dimension="100%"/>
+                        <HeaderBtn 
+                            iconUrl={ images.profile } 
+                            dimension="100%"
+                            handleBtnPress={ handleProfilePress }
+                        />
                     )
                 }}
             />
