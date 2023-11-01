@@ -5,6 +5,8 @@ import menu from "../assets/icons/menu.png";
 import arrowLeft from "../assets/icons/arrow-left.png";
 import instagram from "../assets/icons/instagram.png";
 import twitter from "../assets/icons/twitter.png";
+import heart from "../assets/icons/heart.png";
+import star from "../assets/icons/star.png";
 
 export default {
     home,
@@ -13,5 +15,7 @@ export default {
     menu,
     arrowLeft,
     instagram,
-    twitter
+    twitter,
+    heart,
+    star
 }

@@ -1,10 +1,13 @@
 import React from "react";
 import { View, Text, FlatList } from "react-native";
+import { useRouter } from "expo-router";
 
 import BarCard from "../../common/cards/barCard/BarCard";
 import styles from "./horizontallist.style";
 
 const HorizontalList = ({ title, data }) => {
+    const router = useRouter();
+
     return(
         <View style={{ marginTop: 10 }}>
             <View>
@@ -18,6 +21,7 @@ const HorizontalList = ({ title, data }) => {
                             title={ item.name }
                             subTitle={ item.direction }
                             imageUrl={ item.image }
+                            handleNavigation={ () => router.push(`/barProfile/${ data.id }`) }
                         />
                     )}
                     keyExtractor={ item => item?.id }

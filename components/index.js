@@ -6,13 +6,17 @@ import MenuBar from "./common/menuBar/MenuBar";
 import HorizontalList from "./home/horizontalList/HorizontalList";
 import Welcome from "./home/welcome/Welcome";
 
-// Profile components
+// Artist Profile components
 import ProfileInfo from "./profile/profileinfo/ProfileInfo";
+
+// Bar Profile components
+import BarInfo from "./bar/barInfo/BarInfo";
 
 export {
     HeaderBtn,
     HorizontalList,
     MenuBar,
     Welcome,
-    ProfileInfo
+    ProfileInfo,
+    BarInfo
 };

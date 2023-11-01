@@ -1,11 +1,11 @@
 import React from "react";
-import { View, Text, Image, TouchableOpacity } from "react-native";
+import { Text, Image, TouchableOpacity } from "react-native";
 
 import styles from "./barcard.style";
 
-const BarCard = ({ title, subTitle, imageUrl }) => {
+const BarCard = ({ title, subTitle, imageUrl, handleNavigation }) => {
     return(
-        <TouchableOpacity>
+        <TouchableOpacity onPress={ handleNavigation }>
             <Image 
                 source={ imageUrl }
                 style={{ width: 114, height: 118, borderRadius: 12 }}

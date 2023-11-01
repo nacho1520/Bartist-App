@@ -17,6 +17,11 @@ const styles = StyleSheet.create({
     profileBody:{
         padding: 16
     },
+    barHeader: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center"
+    },
     titleContainer: {
         flexDirection: "column",
         alignItems: "flex-start",
