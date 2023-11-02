@@ -3,7 +3,8 @@ const COLORS = {
     whiteColor: "#F8F9FA",
     fullBlack: "#000000",
     gray: "#CED4DA",
-    violet: "#c77dff"
+    violet: "#c77dff",
+    darkerGray: "#6c757d"
 };
 
 export { COLORS };

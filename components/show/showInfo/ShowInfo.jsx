@@ -29,21 +29,6 @@ const ShowInfo = () => {
                     <Text style={ styles.showName }>{ show.name }</Text>
                     <Text style={ styles.showBar }>{ show.bar }</Text>
                 </View>
-                <View style={{ width: "70%", flexDirection: "row", justifyContent: "space-between", "alignItems": "flex-start", marginVertical: 20 }}>
-                    <View style={{ flexDirection: "column", gap: 5 }}>
-                        <Text style={ styles.infoLabel }>Genero musical:</Text>
-                        <Text style={ styles.infoLabel }>Fecha:</Text>
-                        <Text style={ styles.infoLabel }>Horario:</Text>
-                    </View>
-                    <View style={{ flexDirection: "column", gap: 5 }}>
-                        <Text style={ styles.info }>{ show.genre }</Text>
-                        <Text style={ styles.info }>{ show.date }</Text>
-                        <Text style={ styles.info }>{ show.time }</Text>
-                    </View>
-                </View>
-                <View>
-                    <Text style={ styles.showDesc }>{ show.description }</Text>
-                </View>
             </View>
         </View>
     );
