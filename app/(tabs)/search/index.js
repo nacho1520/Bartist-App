@@ -2,8 +2,8 @@ import React from "react";
 import { SafeAreaView, ScrollView, View, FlatList  } from "react-native";
 import { Stack, useRouter } from "expo-router";
 
-import { images, COLORS, icons } from "../../constants";
-import { HeaderBtn, MenuBar, SearchBar, SearchCard } from "../../components";
+import { images, COLORS, icons } from "../../../constants";
+import { HeaderBtn, MenuBar, SearchBar, SearchCard } from "../../../components";
 
 const bares = [
     {
@@ -51,25 +51,7 @@ const Search = () => {
     };
 
     return(
-        <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.backgroundColor }}>
-            <Stack.Screen 
-                options={{
-                    headerStyle: { backgroundColor: COLORS.backgroundColor },
-                    headerShadowVisible: false,
-                    headerTitle: "",
-                    headerLeft: () => (
-                        <HeaderBtn iconUrl={ icons.menu } dimension="60%"/>
-                    ),
-                    headerRight: () => (
-                        <HeaderBtn 
-                            iconUrl={ images.profile } 
-                            dimension="100%"
-                            handleBtnPress={ handleProfilePress }
-                        />
-                    )
-                }}
-            />
-            <ScrollView 
+        <ScrollView 
                 showsVerticalScrollIndicator={ false }
                 contentContainerStyle={{ justifyContent: "center", padding: 16 }}
             >
@@ -96,12 +78,6 @@ const Search = () => {
                     }
                 </View>
             </ScrollView>
-            <MenuBar 
-                homeNavigation={ () => router.push('/home') }
-                searchNavigation={() => router.push('/search')}
-                globeNavigation={ () => {} }
-            />
-        </SafeAreaView>
     );
 };
 
