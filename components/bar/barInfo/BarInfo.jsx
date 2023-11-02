@@ -2,15 +2,14 @@ import React from "react";
 import { View, Image, Text } from "react-native";
 
 import styles from "./barinfo.style";
-import { images } from "../../../constants";
 import Rating from "../../common/rating/Rating";
 
-const BarInfo = () => {
+const BarInfo = ({ name, type, bio, image }) => {
     return(
         <View>
             <View style={ styles.imgContainer }>
                 <Image 
-                    source={ images.temple }
+                    source={ image }
                     resizeMode="cover"
                     style={ styles.profileImg }
                 />
@@ -18,13 +17,13 @@ const BarInfo = () => {
             <View style={ styles.profileBody }>
                 <View style={ styles.barHeader }>
                     <View style={ styles.titleContainer }>
-                        <Text style={ styles.profileName }>Temple</Text>
-                        <Text style={ styles.profileGenre }>Bar</Text>
+                        <Text style={ styles.profileName }>{ name }</Text>
+                        <Text style={ styles.profileGenre }>{ type }</Text>
                     </View>
                     <Rating />
                 </View>
                 <View>
-                    <Text style={ styles.profileBio }>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </Text>
+                    <Text style={ styles.profileBio }>{ bio }</Text>
                 </View>
             </View>
         </View>
