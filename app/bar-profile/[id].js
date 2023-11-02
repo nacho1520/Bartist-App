@@ -1,15 +1,24 @@
 import React from "react";
 import { View, SafeAreaView, ScrollView  } from "react-native";
-import { Stack, useRouter } from "expo-router";
+import { useLocalSearchParams } from "expo-router";
 
 import { COLORS, icons } from "../../constants";
-import { MenuBar, HeaderBtn, BarInfo } from "../../components";
+import { BarInfo } from "../../components";
+import { bares } from "../../utils";
 
 const BarProfile = () => {
-    const router = useRouter();
+    const params = useLocalSearchParams();
+    const bar = bares.filter( (item) => item.id == params.id)[0]; 
+    console.log(bar);
     return(
         <ScrollView showsVerticalScrollIndicator={ false }>
-            <BarInfo />
+            <BarInfo
+                name={ bar.name ? bar.name : "Desconocido"  }
+                type={ bar.type ? bar.type : "Desconocido"  }
+                image={ bar.image }
+                bio={ bar.bio ? bar.bio : "Desconocido" }
+
+            />
         </ScrollView>
     );
 };

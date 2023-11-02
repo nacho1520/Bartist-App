@@ -8,7 +8,7 @@ import ShowDetail from "./[id]";
 const Layout = () => {
     const router = useRouter();
     return(
-        <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.backgroundColor }}>
+        <>
             <Stack.Screen 
                 options={{
                     headerStyle: { backgroundColor: COLORS.backgroundColor },
@@ -31,7 +31,8 @@ const Layout = () => {
                 }}
             />
             <ShowDetail />
-        </SafeAreaView>
+        </>
+        
     );
 }
 

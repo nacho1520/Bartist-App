@@ -4,6 +4,7 @@ import MenuBar from "./common/menuBar/MenuBar";
 import SearchBar from "./common/searchBar/SearchBar";
 import SearchCard from "./common/cards/searchCard/SearchCard";
 import ShowHorizontalList from "./home/showHorizontalList/ShowHorizontalList";
+import PrimaryBtn from "./common/buttons/primarybtn/PrimaryBtn";
 
 // Home components
 import HorizontalList from "./home/horizontalList/HorizontalList";
@@ -17,6 +18,9 @@ import BarInfo from "./bar/barInfo/BarInfo";
 
 // Show Details
 import ShowInfo from "./show/showInfo/ShowInfo";
+import { default as ShowTabs } from "./show/tabs/Tabs";
+import { default as ShowAbout } from "./show/about/About";
+import BulletPointsInfo from "./show/bulletPointsInfo/BulletPointsInfo";
 
 export {
     HeaderBtn,
@@ -28,5 +32,9 @@ export {
     BarInfo,
     SearchBar,
     SearchCard,
-    ShowInfo
+    ShowInfo,
+    ShowTabs,
+    ShowAbout,
+    BulletPointsInfo,
+    PrimaryBtn
 };

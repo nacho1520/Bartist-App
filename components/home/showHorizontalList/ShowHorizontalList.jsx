@@ -19,9 +19,9 @@ const ShowHorizontalList = ({ title, data }) => {
                     renderItem={ ({ item }) => (
                         <ShowCard 
                             title={ item.name }
-                            subTitle={ item.direction }
+                            subTitle={ item.bar }
                             imageUrl={ item.image }
-                            handleNavigation={ () => router.push(`/show-detail/${ data.id }`) }
+                            handleNavigation={ () => router.push(`/show-detail/${ item.id }`) }
                         />
                     )}
                     keyExtractor={ item => item?.id }
