@@ -7,6 +7,7 @@ import instagram from "../assets/icons/instagram.png";
 import twitter from "../assets/icons/twitter.png";
 import heart from "../assets/icons/heart.png";
 import star from "../assets/icons/star.png";
+import filter from "../assets/icons/filter.png";
 
 export default {
     home,
@@ -17,5 +18,6 @@ export default {
     instagram,
     twitter,
     heart,
-    star
+    star,
+    filter
 }

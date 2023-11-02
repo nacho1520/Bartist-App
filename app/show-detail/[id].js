@@ -1,26 +1,26 @@
 import React from "react";
-import { View, SafeAreaView, ScrollView  } from "react-native";
+import { SafeAreaView, ScrollView, View } from "react-native";
 import { Stack, useRouter } from "expo-router";
 
 import { COLORS, icons } from "../../constants";
-import { MenuBar, HeaderBtn, BarInfo } from "../../components";
+import { MenuBar, HeaderBtn, ShowInfo } from "../../components";
 
-const BarProfile = () => {
+const ShowDetail = () => {
     const router = useRouter();
     return(
         <SafeAreaView style={{ flex:1, backgroundColor: COLORS.backgroundColor }}>
             <Stack.Screen 
-                options={{
+                options={{ 
                     headerStyle: { backgroundColor: COLORS.backgroundColor },
                     headerTitle: "",
                     headerShadowVisible: false,
                     headerLeft: () => (
-                        <HeaderBtn
+                        <HeaderBtn 
                             iconUrl={ icons.arrowLeft }
                             dimension="60%"
-                            handleBtnPress={ () => router.back() } 
+                            handleBtnPress={ () => router.back() }
                         />
-                    ),
+                    ), 
                     headerRight: () => (
                         <HeaderBtn 
                             iconUrl={ icons.heart }
@@ -28,10 +28,10 @@ const BarProfile = () => {
                             handleBtnPress={ () => {} }
                         />
                     )
-                }}
+                 }}
             />
             <ScrollView showsVerticalScrollIndicator={ false }>
-                <BarInfo />
+                <ShowInfo />
             </ScrollView>
             <MenuBar
                 homeNavigation={ () => router.push('/home') }
@@ -42,4 +42,4 @@ const BarProfile = () => {
     );
 };
 
-export default BarProfile;
+export default ShowDetail;

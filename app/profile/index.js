@@ -30,7 +30,7 @@ const Profile = () => {
             </ScrollView>
             <MenuBar 
                 homeNavigation={ () => router.push('/home') }
-                searchNavigation={() => {}}
+                searchNavigation={() => router.push('/search')}
                 globeNavigation={ () => {} }
             />
         </SafeAreaView>
