@@ -21,7 +21,7 @@ const HorizontalList = ({ title, data }) => {
                             title={ item.name }
                             subTitle={ item.direction }
                             imageUrl={ item.image }
-                            handleNavigation={ () => router.push(`/bar-profile/${ data.id }`) }
+                            handleNavigation={ () => router.push(`/bar-profile/${ item.id }`) }
                         />
                     )}
                     keyExtractor={ item => item?.id }
