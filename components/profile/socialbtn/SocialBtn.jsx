@@ -3,15 +3,15 @@ import { View, TouchableOpacity, Text, Image } from "react-native";
 
 import styles from "./socialbtn.style";
 
-const SocialBtn = ({ iconUrl, socialMedia }) => {
+const SocialBtn = ({ iconUrl, socialMedia, handleNavigation }) => {
     return(
-        <TouchableOpacity style={ styles.btnContainer }>
+        <TouchableOpacity style={styles.btnContainer} onPress={handleNavigation && typeof handleNavigation === "function" ? handleNavigation : null}>
             <Image 
-                source={ iconUrl }
+                source={iconUrl}
                 resizeMode="cover"
-                style= { styles.socialIcon }
+                style={styles.socialIcon}
             />
-            <Text style={ styles.socialMedia }>{ socialMedia }</Text>
+            <Text style={styles.socialMedia}>{socialMedia}</Text>
         </TouchableOpacity>
     );
 };
