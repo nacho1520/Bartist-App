@@ -1,4 +1,4 @@
-// Common components 
+// Common components
 import HeaderBtn from "./common/header/headerbtn/HeaderBtn";
 import MenuBar from "./common/menuBar/MenuBar";
 import SearchBar from "./common/searchBar/SearchBar";
@@ -18,23 +18,27 @@ import BarInfo from "./bar/barInfo/BarInfo";
 
 // Show Details
 import ShowInfo from "./show/showInfo/ShowInfo";
+
 import { default as ShowTabs } from "./show/tabs/Tabs";
 import { default as ShowAbout } from "./show/about/About";
 import BulletPointsInfo from "./show/bulletPointsInfo/BulletPointsInfo";
 
+import MyMarkers from "./markers/myMarkers/MyMarkers";
+
 export {
-    HeaderBtn,
-    HorizontalList,
-    ShowHorizontalList,
-    MenuBar,
-    Welcome,
-    ProfileInfo,
-    BarInfo,
-    SearchBar,
-    SearchCard,
-    ShowInfo,
-    ShowTabs,
-    ShowAbout,
-    BulletPointsInfo,
-    PrimaryBtn
+  HeaderBtn,
+  HorizontalList,
+  ShowHorizontalList,
+  MenuBar,
+  Welcome,
+  ProfileInfo,
+  BarInfo,
+  SearchBar,
+  SearchCard,
+  ShowInfo,
+  ShowTabs,
+  ShowAbout,
+  BulletPointsInfo,
+  PrimaryBtn,
+  MyMarkers,
 };

@@ -5,6 +5,7 @@ import styles from "./profileinfo.style";
 import { images, icons } from "../../../constants";
 import SocialBtn from "../socialbtn/SocialBtn";
 import PrimaryBtn from "../../common/buttons/primarybtn/PrimaryBtn";
+import { useRouter } from "expo-router";
 
 const artist = {
     name: "Peso Pluma",
@@ -13,7 +14,16 @@ const artist = {
 
 };
 
-const ProfileInfo = () => {
+
+
+const ProfileInfo = ({}) => {
+
+    const router = useRouter();
+
+    const handleMarkersPress = () => {
+        router.push('/markers');
+    };
+
     return(
         <View>
             <View style={ styles.imgContainer }>
@@ -34,6 +44,7 @@ const ProfileInfo = () => {
                 <View style={{ marginTop: 15, flexDirection: "column", gap: 15 }}>
                     <SocialBtn iconUrl={ icons.instagram } socialMedia="Instagram" />
                     <SocialBtn iconUrl={ icons.twitter } socialMedia="Twitter" />
+                    <SocialBtn iconUrl={icons.marker} socialMedia="Markers" handleNavigation={handleMarkersPress} />
                 </View>
                 <View style={{ width: "100%", flexDirection: "row", justifyContent: "center", alignItems: "center", marginTop: 30 }}>
                     <View style={{ width: "50%" }}>

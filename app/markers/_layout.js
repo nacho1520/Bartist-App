@@ -1,9 +1,10 @@
-import { SafeAreaView, Text } from "react-native";
+import { SafeAreaView } from "react-native";
 import { Stack, useRouter } from "expo-router";
 
-import { COLORS, icons, images } from "../../../constants";
-import Explore from "./index";
-import { HeaderBtn } from "../../../components";
+import { COLORS, icons, images } from "../../constants";
+import Home from "./index";
+import { HeaderBtn } from "../../components";
+import Markers from "./index";
 
 const Layout = () => {
   const router = useRouter();
@@ -29,7 +30,7 @@ const Layout = () => {
           ),
         }}
       />
-      <Explore />
+      <Markers />
     </SafeAreaView>
   );
 };
