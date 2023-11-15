@@ -8,7 +8,7 @@ import twitter from "../assets/icons/twitter.png";
 import heart from "../assets/icons/heart.png";
 import star from "../assets/icons/star.png";
 import filter from "../assets/icons/filter.png";
-import mapPin from "../assets/icons/mapPin.png";
+// import mapPin from "../assets/icons/mapPin.png";
 import marker from "../assets/icons/marker.png";
 
 export default {
@@ -22,6 +22,6 @@ export default {
   heart,
   star,
   filter,
-  mapPin,
+  // mapPin,
   marker,
 };

@@ -73,6 +73,7 @@ const Search = () => {
                                 direction={ bar.direction }
                                 distance={ bar.distance }
                                 image={  bar.image }
+                                key={ bar.id }
                             />
                         ))
                     }

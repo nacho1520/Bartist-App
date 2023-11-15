@@ -57,7 +57,7 @@ const ShowDetail = () => {
                     }
                 </View>
             </ScrollView>
-            <View style={{ width: "100%", flexDirection: "row", justifyContent: "center", marginBottom: 20 }}>
+            <View style={{ width: "100%", flexDirection: "row", justifyContent: "center", marginVertical: 20 }}>
                 <View style={{ width: "50%", }}>
                     <PrimaryBtn btnLabel="Aplicar" />
                 </View>
