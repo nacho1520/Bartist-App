@@ -13,7 +13,7 @@ const Home = () => {
                 <Welcome />
                 <HorizontalList title={ "Tus próximos shows" } query={ 'pubs' } />
                 <HorizontalList title={ "Bares cercanos" } query={ 'pubs' } />
-                <ShowHorizontalList title={ "Shows disponibles" } data={ shows } />
+                <ShowHorizontalList title={ "Shows disponibles" } query={ 'shows' } />
             </View>
         </ScrollView>
     )

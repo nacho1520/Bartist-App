@@ -7,7 +7,7 @@ const ShowCard = ({ title, subTitle, imageUrl, handleNavigation }) => {
     return(
         <TouchableOpacity onPress={ handleNavigation }>
             <Image 
-                source={ imageUrl }
+                source={{ uri: imageUrl }}
                 style={{ width: 114, height: 118, borderRadius: 360 }}
             />
             <Text style={ styles.title } >{ title }</Text>
