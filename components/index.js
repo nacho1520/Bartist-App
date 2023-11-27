@@ -13,8 +13,9 @@ import Welcome from "./home/welcome/Welcome";
 // Artist Profile components
 import ProfileInfo from "./profile/profileinfo/ProfileInfo";
 
-// Bar Profile components
+// Bar components
 import BarInfo from "./bar/barInfo/BarInfo";
+import MapCallout from "./bar/mapCallout/MapCallout";
 
 // Show Details
 import ShowInfo from "./show/showInfo/ShowInfo";
@@ -41,4 +42,5 @@ export {
   BulletPointsInfo,
   PrimaryBtn,
   MyMarkers,
+  MapCallout
 };

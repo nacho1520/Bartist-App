@@ -1,7 +1,10 @@
 import React from "react";
 import { View } from "react-native";
-import MapView, { Marker } from "react-native-maps";
-import { icons } from "../../../constants";
+import MapView, { Callout, Marker } from "react-native-maps";
+import { useRouter } from "expo-router";
+
+import { MapCallout } from "../../../components";
+import { images } from "../../../constants";
 
 const bares = [
   {
@@ -31,9 +34,11 @@ const bares = [
 ];
 
 const Explore = () => {
+  const router = useRouter();
+
   return (
     <View
-      style={{ flex: 1, width: "100%", height: "100%", paddingHorizontal: 10 }}
+      style={{ flex: 1, width: "100%", height: "100%", paddingVertical: 10 }}
     >
       <MapView
         style={{ flex: 1 }}
@@ -51,9 +56,17 @@ const Explore = () => {
               latitude: bar.latitude,
               longitude: bar.longitude,
             }}
-            title={bar.name}
-            // Add more properties as needed
-          />
+          >
+            <Callout 
+              onPress={ () => router.push(`bar-profile/${ bar.id }`)}
+            >
+              <MapCallout 
+                name={ bar.name } 
+                address="Bahia Blanca 115" 
+                image={ images.temple } 
+              />
+            </Callout>
+          </Marker>
         ))}
       </MapView>
     </View>
