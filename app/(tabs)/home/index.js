@@ -11,10 +11,9 @@ const Home = () => {
         <ScrollView showsVerticalScrollIndicator={ false }>
             <View style={{ flex: 1, padding: 16 }}>
                 <Welcome />
-                <HorizontalList title={ "Tus próximos shows" } data={ bares } />
-                <HorizontalList title={ "Bares cercanos" } data={ bares } />
+                <HorizontalList title={ "Tus próximos shows" } query={ 'pubs' } />
+                <HorizontalList title={ "Bares cercanos" } query={ 'pubs' } />
                 <ShowHorizontalList title={ "Shows disponibles" } data={ shows } />
-                {/* <ShowHorizontalList title={ "Shows disponibles" } data={ shows } /> */}
             </View>
         </ScrollView>
     )

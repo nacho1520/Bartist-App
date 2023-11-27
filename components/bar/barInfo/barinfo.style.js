@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     flex: 1,
     width: "100%",
     height: 400,
-    paddingHorizontal: 10,
+    padding: 10,
   },
   map: {
     width: "100%",

@@ -1,24 +1,35 @@
 import React from "react";
-import { View, SafeAreaView, ScrollView  } from "react-native";
+import { View, ScrollView, ActivityIndicator, Text  } from "react-native";
 import { useLocalSearchParams } from "expo-router";
 
+import useFetch from "../../hooks/useFetch";
 import { COLORS, icons } from "../../constants";
 import { BarInfo } from "../../components";
-import { bares } from "../../utils";
 
 const BarProfile = () => {
     const params = useLocalSearchParams();
-    const bar = bares.filter( (item) => item.id == params.id)[0]; 
-    console.log(bar);
+    const { data, isLoading, error } = useFetch(`pubs/${ params.id }`);
+    
     return(
         <ScrollView showsVerticalScrollIndicator={ false }>
-            <BarInfo
-                name={ bar.name ? bar.name : "Desconocido"  }
-                type={ bar.type ? bar.type : "Desconocido"  }
-                image={ bar.image }
-                bio={ bar.bio ? bar.bio : "Desconocido" }
-
-            />
+            {
+                isLoading ? (
+                    <View>
+                        <ActivityIndicator size="large" color={ COLORS.violet }/>
+                    </View>
+                ) : error ? (
+                    <Text>Algo salio mal...</Text>
+                ) : (
+                    <BarInfo
+                        name={ data.name }
+                        type={ data.type }
+                        image={ data.profileImage }
+                        bio={ data.bio }
+                        latitude={ data.latitude }
+                        longitude={ data.longitude }
+                    />
+                )
+            }
         </ScrollView>
     );
 };

@@ -2,14 +2,13 @@ import React from "react";
 import { View, Image, Text } from "react-native";
 import MapView, { Marker } from "react-native-maps";
 import styles from "./barinfo.style";
-import { images } from "../../../constants";
 import Rating from "../../common/rating/Rating";
 
-const BarInfo = ({ name, type, bio, image }) => {
+const BarInfo = ({ name, type, bio, image, latitude, longitude }) => {
   return (
     <View>
       <View style={styles.imgContainer}>
-        <Image source={image} resizeMode="cover" style={styles.profileImg} />
+        <Image source={{ uri: image }} resizeMode="cover" style={styles.profileImg} />
       </View>
       <View style={styles.profileBody}>
         <View style={styles.barHeader}>
@@ -27,16 +26,16 @@ const BarInfo = ({ name, type, bio, image }) => {
         <MapView
           style={styles.map}
           initialRegion={{
-            latitude: -34.622603773402005 - 0.004,
-            longitude: -58.429877868296785,
+            latitude: latitude,
+            longitude: longitude,
             latitudeDelta: 0.01,
             longitudeDelta: 0.01,
           }}
         >
           <Marker
             coordinate={{
-              latitude: -34.622603773402 - 0.003,
-              longitude: -58.429877868296785,
+              latitude: latitude,
+              longitude: longitude,
             }}
           ></Marker>
         </MapView>

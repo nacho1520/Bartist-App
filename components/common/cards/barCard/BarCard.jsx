@@ -7,7 +7,7 @@ const BarCard = ({ title, subTitle, imageUrl, handleNavigation }) => {
     return(
         <TouchableOpacity onPress={ handleNavigation }>
             <Image 
-                source={ imageUrl }
+                source={{ uri: imageUrl }}
                 style={{ width: 114, height: 118, borderRadius: 12 }}
             />
             <Text style={ styles.title } >{ title }</Text>
