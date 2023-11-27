@@ -65,7 +65,7 @@ const Search = () => {
                         handleBtnPress={ () => {} }
                     />
                 </View>
-                <View style={{ flex: 1, flexDirection: "column", gap: 20 }}>
+                <View style={{ flex: 1, flexDirection: "column", gap: 30, paddingVertical: 10}}>
                     {
                         bares.map((bar) => (
                             <SearchCard 

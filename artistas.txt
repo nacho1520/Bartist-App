@@ -1,0 +1,29 @@
+name: Gorillaz
+genres: Hip hop, Rock alternativo
+bio: Gorillaz es una banda virtual inglesa creada en 1998 por Damon Albarn y Jamie Hewlett. La banda está compuesta por cuatro miembros ficticios: 2-D, Noodle, Murdoc Niccals y Russel Hobbs. La mayoría de sus canciones junto con todo su universo ficticio, se presentan a través de vídeos musicales animados, de animación tradicional y animación por computadora, entrevistas y pequeños cortos animados. En la realidad, Albarn es el único miembro permanente de la banda.
+instagram: https://www.instagram.com/gorillaz/?hl=es
+twitter: https://twitter.com/gorillaz
+
+name: Tini
+genres: Pop
+bio: Martina "TINI” Stoessel is one of the most influential artists and one of the fastest growing Latina singer-songwriters of our times. She has a combined social following of over 35 million and more than 10 billion combined audio and video streams.
+instagram: https://www.instagram.com/tinistoessel/?hl=es
+twitter: https://twitter.com/TiniStoessel
+
+name: Trueno
+genres: Rap,Hip hop latino,Trap latino
+bio: Trueno, nacido y criado en el barrio de La Boca, forma parte de la nueva corriente de artistas con una visión propia sobre el sentido próximo del rap a nivel regional. Conocer el lugar donde Mateo Palacios Corazzina y su familia nacieron, es vital para comprender su mundo y así las letras de sus canciones. En 2019 se corona como campeón de las ediciones de Red Bull Batalla de los Gallos y Freestyle Master Series, las competencias de freestyle más importantes a nivel regional. Otros de sus logros en 2019 fue conseguir junto a Bizarrap el freestyle con más vistas en el mundo. En marzo del 2020 lanzó su primer disco: “Atrevido”.
+instagram: https://www.instagram.com/trueno/?hl=es-la
+twitter: https://twitter.com/TruenoOficiaI
+
+name: Residente
+genres: Rap,Hip hop,Urbano
+bio: Residente (René Pérez Joglar) is a rapper, singer, writer, producer, film director, and, along with stepbrother Visitante (Eduardo José Cabra Martínez) and sister  (Ileana Mercedes Cabra Joglar) are the creative core of rap group , whose 24 Latin Grammys are the most awarded to a single group. 
+instagram: https://www.instagram.com/residente/
+twitter: https://twitter.com/residente
+
+name: Red Hot Chilli Peppers
+genres: Rock Alternativo,Funk Rock
+bio: We went in search of ourselves as the band that we have somehow always been. Just for the fun of it we jammed and learned some old songs. Before long we started the mysterious process of building new songs. A beautiful bit of chemistry meddling that had befriended us hundreds of times along the way. Once we found that slip stream of sound and vision, we just kept mining. 
+instagram: https://www.instagram.com/chilipeppers/
+twitter: https://twitter.com/ChiliPeppers

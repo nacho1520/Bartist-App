@@ -16,7 +16,6 @@ const SearchCard = ({ name, direction, image, distance }) => {
             <View style={ styles.infoContainer }>
                 <Text style={ styles.title }>{ name }</Text>
                 <Text style={ styles.info }>{ direction }</Text>
-                <Text style={ styles.info }>{ distance }</Text>
             </View>
         </TouchableOpacity>
     );
