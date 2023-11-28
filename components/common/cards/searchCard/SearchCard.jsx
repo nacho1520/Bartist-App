@@ -3,9 +3,9 @@ import { TouchableOpacity, Text, Image, View } from "react-native";
 
 import styles from "./searchcard.style";
 
-const SearchCard = ({ name, direction, image, distance }) => {
+const SearchCard = ({ name, direction, image, handlePress}) => {
     return(
-        <TouchableOpacity style={ styles.card }>
+        <TouchableOpacity style={ styles.card } onPress={ handlePress }>
             <View style={ styles.imgContainer }>
                 <Image 
                     source={ image }

@@ -8,7 +8,7 @@ const ShowInfo = ({ name, bar, image }) => {
         <View>
             <View style={ styles.imgContainer }>
                 <Image 
-                    source={ image }
+                    source={{ uri: image }}
                     resizeMode="cover"
                     style={ styles.showImg }
                 />

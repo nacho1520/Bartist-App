@@ -19,7 +19,13 @@ const Layout = () => {
           headerStyle: { backgroundColor: COLORS.backgroundColor },
           headerShadowVisible: false,
           headerTitle: "",
-          headerLeft: () => <HeaderBtn iconUrl={icons.menu} dimension="60%" />,
+          headerLeft: () => (
+            <HeaderBtn 
+              iconUrl={icons.menu} 
+              dimension="60%"
+              handleBtnPress={ () => router.push('/menu') } 
+            />
+          ),
           headerRight: () => (
             <HeaderBtn
               iconUrl={images.profile}
