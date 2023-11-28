@@ -1,22 +1,39 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { View, ActivityIndicator, Text } from "react-native";
 import MapView, { Callout, Marker } from "react-native-maps";
 import { useRouter } from "expo-router";
+import * as Location from "expo-location";
 import useFetch from "../../../hooks/useFetch";
 
 import { MapCallout } from "../../../components";
 import { COLORS } from "../../../constants";
 
 const Explore = () => {
+  const [ location, setLocation ] = useState(null);
   const { data, isLoading, error } = useFetch('pubs');
   const router = useRouter();
+
+  useEffect(() => {
+    (async () => {
+      let { status } = await Location.requestForegroundPermissionsAsync();
+      if(status == 'granted') {
+        console.log('Permission granted');
+      } else {
+        console.log('Permission not granted');
+        return;
+      }
+      const loc = await Location.getCurrentPositionAsync();
+      console.log(loc);
+      setLocation(loc);
+    })();
+  }, [])
 
   return (
     <View
       style={{ flex: 1, width: "100%", height: "100%", paddingVertical: 10 }}
     >
       {
-        isLoading ? (
+        isLoading || location == null ? (
           <ActivityIndicator size="large" color={ COLORS.violet } />
         ) : error ? (
           <Text>Algo salio mal...</Text>
@@ -24,8 +41,8 @@ const Explore = () => {
           <MapView
             style={{ flex: 1 }}
             initialRegion={{
-              latitude: -34.622603773402005 - 0.004,
-              longitude: -58.429877868296785,
+              latitude: location.coords.latitude,
+              longitude: location.coords.longitude,
               latitudeDelta: 0.05,
               longitudeDelta: 0.05,
             }}
