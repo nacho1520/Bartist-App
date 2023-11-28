@@ -22,7 +22,7 @@ const BarInfo = ({ name, type, bio, image, latitude, longitude }) => {
           <Text style={styles.profileBio}>{bio}</Text>
         </View>
       </View>
-      <View style={styles.container}>
+      {/* <View style={styles.container}>
         <MapView
           style={styles.map}
           initialRegion={{
@@ -39,7 +39,7 @@ const BarInfo = ({ name, type, bio, image, latitude, longitude }) => {
             }}
           ></Marker>
         </MapView>
-      </View>
+      </View> */}
     </View>
   );
 };
