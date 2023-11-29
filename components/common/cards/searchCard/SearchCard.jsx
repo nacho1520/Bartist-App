@@ -8,7 +8,7 @@ const SearchCard = ({ name, direction, image, handlePress}) => {
         <TouchableOpacity style={ styles.card } onPress={ handlePress }>
             <View style={ styles.imgContainer }>
                 <Image 
-                    source={ image }
+                    source={{ uri: image }}
                     resizeMode="cover"
                     style={ styles.searchImg }
                 />

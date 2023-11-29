@@ -1,92 +1,39 @@
-import { View, ScrollView, SafeAreaView } from "react-native";
+import { View, ScrollView, ActivityIndicator } from "react-native";
 import { useRouter } from "expo-router";
 
-import { images, COLORS } from "../../constants";
-import {
-  HorizontalList,
-  MenuBar,
-  MyMarkers,
-  ShowHorizontalList,
-} from "../../components";
+import { COLORS } from "../../constants";
+import { SearchCard } from "../../components";
+import useFetch from "../../hooks/useFetch";
 
-const bares = [
-  {
-    id: 1,
-    name: "Temple",
-    direction: "Costa Rica 4677",
-    image: images.temple,
-  },
-  {
-    id: 2,
-    name: "Rabieta",
-    direction: "Av. Libertador 3949",
-    image: images.rabieta,
-  },
-  {
-    id: 3,
-    name: "Rabieta",
-    direction: "Av. Libertador 3949",
-    image: images.rabieta,
-  },
-  {
-    id: 4,
-    name: "Rabieta",
-    direction: "Av. Libertador 3949",
-    image: images.rabieta,
-  },
-  {
-    id: 5,
-    name: "Rabieta",
-    direction: "Av. Libertador 3949",
-    image: images.rabieta,
-  },
-];
-
-const shows = [
-  {
-    id: 1,
-    name: "Temple",
-    direction: "22:00hs",
-    image: images.temple,
-  },
-  {
-    id: 2,
-    name: "Rabieta",
-    direction: "21:30hs",
-    image: images.rabieta,
-  },
-  {
-    id: 3,
-    name: "Rabieta",
-    direction: "18:30hs",
-    image: images.rabieta,
-  },
-  {
-    id: 4,
-    name: "Rabieta",
-    direction: "Av. Libertador 3949",
-    image: images.rabieta,
-  },
-  {
-    id: 5,
-    name: "Rabieta",
-    direction: "Av. Libertador 3949",
-    image: images.rabieta,
-  },
-];
+const artistId = 'bd708705-5f91-4742-a8a8-d9a1e7a7b1da';
 
 const Markers = () => {
+  const { data, isLoading, error } = useFetch(`artists/${ artistId }/likes`);
   const router = useRouter();
+
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       <View style={{ flex: 1, padding: 16 }}>
-        <MyMarkers />
-        <HorizontalList title={"Bares Favoritos "} data={bares} />
-        <ShowHorizontalList title={"Shows Favoritos"} data={shows} />
-        <ShowHorizontalList
-          title={"Shows Favoritos Disponibles"}
-          data={shows}
-        />
+        {
+          isLoading ? (
+            <ActivityIndicator size="large" color={ COLORS.violet } />
+          ) : error ? (
+            <Text>Algo salio mal...</Text>
+          ) : (
+            <View style={{ flex: 1, flexDirection: "column", gap: 30, paddingVertical: 10}}>
+              {
+                data.map((item) => (
+                    <SearchCard 
+                        name={ item.name }
+                        direction={ item.address ? item.address : item.date }
+                        image={  item.profileImage ? item.profileImage : item.image }
+                        key={ item._id }
+                    />
+                ))
+              }
+            </View>
+          )
+        }
       </View>
     </ScrollView>
   );

@@ -19,21 +19,17 @@ const Layout = () => {
         options={{
           headerStyle: { backgroundColor: COLORS.backgroundColor },
           headerShadowVisible: false,
-          headerTitle: "",
+          headerTitle: "Mis Favoritos",
+          headerTitleStyle: {
+            color: COLORS.whiteColor
+          },
           headerLeft: () => (
             <HeaderBtn 
-              iconUrl={icons.menu} 
+              iconUrl={icons.arrowLeft} 
               dimension="60%"
-              handleBtnPress={ () => router.push('/menu') } 
+              handleBtnPress={ () => router.back() } 
             />
-          ),
-          headerRight: () => (
-            <HeaderBtn
-              iconUrl={images.profile}
-              dimension="100%"
-              handleBtnPress={handleProfilePress}
-            />
-          ),
+          )
         }}
       />
       <Markers />
