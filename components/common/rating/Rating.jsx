@@ -2,39 +2,34 @@ import React from "react";
 import { View, Image, TouchableOpacity, Text } from "react-native";
 
 import styles from "./rating.style";
-import { icons } from "../../../constants";
 
-const Rating = ({ rate }) => {
+const Rating = ({ rate, handlePress, rateIcon, unRateIcon, textLabel }) => {
+    const maxRating = [1,2,3,4,5];
     return(
-        <TouchableOpacity style={ styles.ratingContainer }>
+        <TouchableOpacity style={ styles.ratingContainer } onPress={ handlePress }>
             <View style={ styles.starContainer }>
-                <Image 
-                    source={ icons.star }
-                    resizeMode="cover"
-                    style={ styles.starIcon }
-                />
-                <Image 
-                    source={ icons.star }
-                    resizeMode="cover"
-                    style={ styles.starIcon }
-                />
-                <Image 
-                    source={ icons.star }
-                    resizeMode="cover"
-                    style={ styles.starIcon }
-                />
-                <Image 
-                    source={ icons.star }
-                    resizeMode="cover"
-                    style={ styles.starIcon }
-                />
-                <Image 
-                    source={ icons.star }
-                    resizeMode="cover"
-                    style={ styles.starIcon }
-                />
+                {
+                    maxRating.map((item, key) => (
+                        <Image 
+                            source={ 
+                                item <= rate ? 
+                                rateIcon : 
+                                unRateIcon
+                             }
+                            resizeMode="cover"
+                            style={ styles.starIcon }
+                            key={ item }
+                        />
+                    ))
+                }
             </View>
-            <Text style={ styles.rateLabel }>Ver comentarios</Text>
+            {
+                textLabel ? (
+                    <Text style={ styles.rateLabel }>Ver comentarios</Text>
+                ) : (
+                    <></>
+                )
+            }
         </TouchableOpacity>
     );
 };

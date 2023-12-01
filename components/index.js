@@ -16,6 +16,11 @@ import ProfileInfo from "./profile/profileinfo/ProfileInfo";
 // Bar components
 import BarInfo from "./bar/barInfo/BarInfo";
 import MapCallout from "./bar/mapCallout/MapCallout";
+import RateModal from "./rateModal/RateModal";
+import RatingCard from "./common/cards/ratingCard/RatingCard";
+import Rating from "./common/rating/Rating";
+import RatingBar from "./common/ratingBar/RatingBar";
+import ProfileImage from "./common/profileImage/ProfileImage";
 
 // Show Details
 import ShowInfo from "./show/showInfo/ShowInfo";
@@ -42,5 +47,10 @@ export {
   BulletPointsInfo,
   PrimaryBtn,
   MyMarkers,
-  MapCallout
+  MapCallout,
+  RateModal,
+  RatingCard,
+  Rating,
+  RatingBar,
+  ProfileImage
 };

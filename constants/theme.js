@@ -4,7 +4,8 @@ const COLORS = {
     fullBlack: "#000000",
     gray: "#CED4DA",
     violet: "#c77dff",
-    darkerGray: "#6c757d"
+    darkerGray: "#6c757d",
+    darkerWhite: "#F4F4F4"
 };
 
 export { COLORS };

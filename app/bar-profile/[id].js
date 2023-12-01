@@ -64,6 +64,10 @@ const BarProfile = () => {
             likePub();
         }
     };
+
+    const handleRatingNav = () => {
+        router.push(`pub-ratings/${ params.id }`);
+    };
     
     return(
         <ScrollView showsVerticalScrollIndicator={ false }>
@@ -104,6 +108,8 @@ const BarProfile = () => {
                             bio={ data.bio }
                             latitude={ data.latitude }
                             longitude={ data.longitude }
+                            rating={ data.rating }
+                            handleRatingPress={ handleRatingNav }
                         />
                     </>
                 )
