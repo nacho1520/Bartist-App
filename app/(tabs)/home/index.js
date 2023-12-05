@@ -1,19 +1,15 @@
-import { View, ScrollView, SafeAreaView } from "react-native";
-import { useRouter } from "expo-router";
+import { View, ScrollView } from "react-native";
 
-import { images,COLORS } from "../../../constants";
-import { HorizontalList, MenuBar, Welcome, ShowHorizontalList } from "../../../components";
-import { bares, shows } from "../../../utils";
+import { Welcome, ExplorePubs, ExploreShows, ExploreTopPubs } from "../../../components";
 
 const Home = () => {
-    const router = useRouter();
     return (
         <ScrollView showsVerticalScrollIndicator={ false }>
             <View style={{ flex: 1, padding: 16 }}>
                 <Welcome />
-                <HorizontalList title={ "Tus próximos shows" } query={ 'pubs' } />
-                <HorizontalList title={ "Bares cercanos" } query={ 'pubs' } />
-                <ShowHorizontalList title={ "Shows disponibles" } query={ 'shows' } />
+                <ExplorePubs />
+                <ExploreTopPubs />
+                <ExploreShows />
             </View>
         </ScrollView>
     )

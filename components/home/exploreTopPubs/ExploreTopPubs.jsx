@@ -2,35 +2,37 @@ import React from "react";
 import { View, Text, FlatList, ActivityIndicator } from "react-native";
 import { useRouter } from "expo-router";
 
-import { COLORS } from "../../../constants";
 import useFetch from "../../../hooks/useFetch";
-import ShowCard from "../../common/cards/showCard/ShowCard";
-import styles from "./showhorizontallist.style";
+import BarCard from "../../common/cards/barCard/BarCard";
+import styles from "./exploretoppubs.style";
+import { COLORS } from "../../../constants";
 
-const ShowHorizontalList = ({ title, query }) => {
+const ExploreTopPubs = () => {
     const router = useRouter();
-    const { data, isLoading, error } = useFetch(query);
+    const { data, isLoading, error } = useFetch('pubs/topPubs');
 
     return(
         <View style={{ marginTop: 10 }}>
             <View>
-                <Text style={ styles.title } >{ title }</Text>
+                <Text style={ styles.title } >Top bares</Text>
             </View>
             <View style={ styles.listContainer } >
                 {
                     isLoading ? (
-                        <ActivityIndicator size="large" color={ COLORS.violet }/>
+                        <View>
+                            <ActivityIndicator size="large" color={ COLORS.violet } />
+                        </View>
                     ) : error ? (
                         <Text>Algo salio mal...</Text>
                     ) : (
                         <FlatList 
                             data={ data }
                             renderItem={ ({ item }) => (
-                                <ShowCard 
+                                <BarCard 
                                     title={ item.name }
-                                    subTitle={ item.date.split('T')[0] }
-                                    imageUrl={ item.image }
-                                    handleNavigation={ () => router.push(`/show-detail/${ item._id }`) }
+                                    subTitle={ item.type }
+                                    imageUrl={ item.profileImage }
+                                    handleNavigation={ () => router.push(`/bar-profile/${ item._id }`) }
                                 />
                             )}
                             keyExtractor={ item => item?._id }
@@ -45,4 +47,4 @@ const ShowHorizontalList = ({ title, query }) => {
     );
 };
 
-export default ShowHorizontalList;
+export default ExploreTopPubs;

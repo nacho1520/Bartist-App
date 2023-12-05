@@ -3,12 +3,14 @@ import HeaderBtn from "./common/header/headerbtn/HeaderBtn";
 import MenuBar from "./common/menuBar/MenuBar";
 import SearchBar from "./common/searchBar/SearchBar";
 import SearchCard from "./common/cards/searchCard/SearchCard";
-import ShowHorizontalList from "./home/showHorizontalList/ShowHorizontalList";
 import PrimaryBtn from "./common/buttons/primarybtn/PrimaryBtn";
 
 // Home components
 import HorizontalList from "./home/horizontalList/HorizontalList";
 import Welcome from "./home/welcome/Welcome";
+import ExplorePubs from "./home/explorePubs/ExplorePubs";
+import ExploreShows from "./home/exploreShows/exploreShows";
+import ExploreTopPubs from "./home/exploreTopPubs/ExploreTopPubs";
 
 // Artist Profile components
 import ProfileInfo from "./profile/profileinfo/ProfileInfo";
@@ -34,7 +36,6 @@ import MyMarkers from "./markers/myMarkers/MyMarkers";
 export {
   HeaderBtn,
   HorizontalList,
-  ShowHorizontalList,
   MenuBar,
   Welcome,
   ProfileInfo,
@@ -52,5 +53,8 @@ export {
   RatingCard,
   Rating,
   RatingBar,
-  ProfileImage
+  ProfileImage,
+  ExplorePubs,
+  ExploreShows,
+  ExploreTopPubs
 };

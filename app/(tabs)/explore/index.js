@@ -23,7 +23,6 @@ const Explore = () => {
         return;
       }
       const loc = await Location.getCurrentPositionAsync();
-      console.log(loc);
       setLocation(loc);
     })();
   }, [])
@@ -56,7 +55,7 @@ const Explore = () => {
                 }}
               >
                 <Callout 
-                  onPress={ () => router.push(`bar-profile/${ bar._id }`)}
+                  onPress={ () => router.push(`bar-profile/${ item._id }`)}
                 >
                   <MapCallout 
                     name={ item.name } 
