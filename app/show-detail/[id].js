@@ -9,7 +9,7 @@ import {
     ShowAbout, 
     BulletPointsInfo, 
     PrimaryBtn,
-    HeaderBtn 
+    HeaderBtn
 } from "../../components";
 import useFetch from "../../hooks/useFetch";
 import { COLORS, icons } from "../../constants";
@@ -104,6 +104,24 @@ const ShowDetail = () => {
         }
     };
 
+    const applyShow = async () => {
+        const url = `https://bartist-backend.fly.dev/api/v1/shows/${ params.id }/artists`;
+        const body = {
+            artistId: artistId
+        };
+        const header = {
+            'content-type': 'application/json'
+        };
+        try {
+            const response = await axios.post(url, body, header);
+            console.log(response);
+        } catch (e) {
+            console.error('Error applying show:', e.response ? e.response.data : e.message);
+        } finally {
+            router.push('/home');
+        }
+    };
+
     return(
         <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.backgroundColor }}>
             {
@@ -151,7 +169,7 @@ const ShowDetail = () => {
                         </ScrollView>
                         <View style={{ width: "100%", flexDirection: "row", justifyContent: "center", marginVertical: 20 }}>
                             <View style={{ width: "50%", }}>
-                                <PrimaryBtn btnLabel="Aplicar" />
+                                <PrimaryBtn btnLabel="Aplicar" handlePress={ applyShow } />
                             </View>
                         </View>
                     </>

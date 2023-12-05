@@ -4,6 +4,7 @@ import MenuBar from "./common/menuBar/MenuBar";
 import SearchBar from "./common/searchBar/SearchBar";
 import SearchCard from "./common/cards/searchCard/SearchCard";
 import PrimaryBtn from "./common/buttons/primarybtn/PrimaryBtn";
+import ConfirmModal from "./common/confirmModal/ConfirmModal";
 
 // Home components
 import HorizontalList from "./home/horizontalList/HorizontalList";
@@ -56,5 +57,6 @@ export {
   ProfileImage,
   ExplorePubs,
   ExploreShows,
-  ExploreTopPubs
+  ExploreTopPubs,
+  ConfirmModal
 };
